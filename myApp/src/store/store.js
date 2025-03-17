@@ -10,7 +10,7 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredPaths: ["auth.user"], // Ignore warnings for auth.user (optional)
+        ignoredPaths: ["auth.user"], 
       },
     }),
 });

@@ -11,7 +11,6 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action) => {
-      // Extract only necessary fields
       const { uid, email, displayName, accessToken } = action.payload;
       state.user = { uid, email, displayName, accessToken }; // Store only serializable data
     },

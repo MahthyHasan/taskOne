@@ -1,26 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { logoutUser } from '../../store/authActions';
+import React, { useEffect } from 'react';
 import Button from '../atoms/Button';
 
 const Splash = ({ navigation }) => {
-  const dispatch = useDispatch();
 
-  const handleLogout = async () => {
-    try {
-      await dispatch(logoutUser());
-      console.log("User logged out");
-      navigation.replace("SignIn"); 
-    } catch (error) {
-      console.error("Logout failed:", error.message);
-    }
-  };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.replace('SignIn');
+    }, 5000); 
+
+    return () => clearTimeout(timer); 
+  }, [navigation]);  
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>My App</Text>
-      <Button title="LogOut" onPress={handleLogout} />
+      <Text style={styles.text}>My App</Text>      
     </View>
   );
 };

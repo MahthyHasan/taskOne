@@ -8,15 +8,17 @@ import SignIn from './src/components/screens/SignIn';
 import Splash from './src/components/screens/Splash';
 import SignUp from './src/components/screens/SignUp';
 import { loadUser } from "./src/store/authActions"; 
+import GOT from './src/components/screens/GOT';
+import Profile from './src/components/screens/Profile';
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.auth?.user); // Ensure optional chaining in case state is undefined
+  const user = useSelector((state) => state.auth?.user);
 
   useEffect(() => {
-    dispatch(loadUser()); // Ensure `loadUser` is correctly defined in actions
+    dispatch(loadUser()); 
   }, [dispatch]);
 
   return (
@@ -27,11 +29,15 @@ const AppNavigator = () => {
       }}
       >
         {user ? (
+        <>                
+        <Stack.Screen name="GOT" component={GOT} />        
+        <Stack.Screen name="Profile" component={Profile} />        
+        </>
         
-            <Stack.Screen name="Splash" component={Splash} />
-                
+                        
         ) : (
           <>
+            <Stack.Screen name="Splash" component={Splash} />
             <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="SignUp" component={SignUp} />
           </>

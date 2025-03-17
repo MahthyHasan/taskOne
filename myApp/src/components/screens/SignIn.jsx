@@ -21,7 +21,7 @@ const SignIn = () => {
 
     try {
       await dispatch(loginUser(email, password));
-      navigation.replace('Splash'); 
+      navigation.replace('GOT'); 
     } catch (error) {
       Alert.alert('Login Failed', error.message);
     }
@@ -34,6 +34,7 @@ const SignIn = () => {
         <TextInputField label="Email" placeholder="Email" value={email} onChangeText={setEmail} />
         <PasswordInputFields label="Password" placeholder="Password" value={password} onChangeText={setPassword} />
       </View>
+      {/* TODO */}
       <View>
         <Text style={styles.forgetPass}>Forget Password?</Text>
       </View>
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
   },
   text: {
-    color: "#FFFFF",
+    color: "#FFFFFF",
     fontSize: 24,
     textAlign: 'center',
     marginTop: 124,

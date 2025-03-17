@@ -65,7 +65,7 @@ const SignUp = () => {
     }
 
     try {
-      await dispatch(registerUser(email, password)); // Dispatch Redux action
+      await dispatch(registerUser(email, password)); 
       Alert.alert('Success', 'Account created successfully');
       navigation.navigate('SignIn'); 
     } catch (err) {
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
   },
   text: {
-    color: "#FFFFF",
+    color: "#FFFFFf",
     fontSize: 24,
     textAlign: 'center',
     marginTop: 71,
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     height: 20,
   },
   conditionValidation: {
-    color: "#FFFFF",
+    color: "#FFFFFF",
     fontSize: 12,
   },
   loginButton: {
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     marginTop: 60,
   },
   createAccountLinkText: {
-    color: "#FFFFF",
+    color: "#FFFFFF",
     fontSize: 15,
   },
   signUpLink: {
