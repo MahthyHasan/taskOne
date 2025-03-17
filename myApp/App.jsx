@@ -10,7 +10,6 @@ import SignUp from './src/components/screens/SignUp';
 import { loadUser } from "./src/store/authActions"; 
 import GOT from './src/components/screens/GOT';
 import Profile from './src/components/screens/Profile';
-import VoicePage from './src/components/screens/VoicePage';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +31,6 @@ const AppNavigator = () => {
         {user ? (
         <>                
         <Stack.Screen name="GOT" component={GOT} />        
-        <Stack.Screen name="Voice" component={VoicePage} />        
         <Stack.Screen name="Profile" component={Profile} />        
         </>
         

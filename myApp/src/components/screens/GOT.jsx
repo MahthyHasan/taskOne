@@ -29,14 +29,15 @@ const GOT = ({ navigation }) => {
     <View style={styles.container}>
       
       <View style={styles.iconDiv}>
-      <TouchableOpacity onPress={() => navigation.navigate('Voice')}>
-          <Image source={require("../../../assets/icons/mic1.png")} style={styles.settingsIcon} />
-        </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
           <Image source={require("../../../assets/icons/settings.png")} style={styles.settingsIcon} />
         </TouchableOpacity>
-      </View>     
-      <Text style={styles.text}>Game of Thrones Characters</Text>     
+      </View>
+
+     
+      <Text style={styles.text}>Game of Thrones Characters</Text>
+
+     
       <View style={styles.characterContainer}>
         {status === 'loading' ? (
           <ActivityIndicator size="large" color="#FFD482" />
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 24,
     textAlign: "center",
-    marginTop: 29,
+    marginTop: 20,
   },
   settingsIcon: {
     width: 50,
@@ -85,9 +86,9 @@ const styles = StyleSheet.create({
     marginTop: 37,
   },
   iconDiv: {
-    flexDirection: "row",
-    justifyContent:"space-between",
-    paddingHorizontal: 29,
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+    marginRight: 29,
   },
   characterContainer: {
     alignSelf: "center",
